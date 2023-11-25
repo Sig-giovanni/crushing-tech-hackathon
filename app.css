@@ -150,12 +150,16 @@ main {
 }
 
 /* .alert__close {
+
 } */
 
 .alert__close svg {
   width: 20px;
   height: 20px;
 }
+  /* .alert_close svg{
+      cursor: pointer;
+    } */
 
 /*#######################################*/
 /*############# RESPONSIVENESS #############*/
