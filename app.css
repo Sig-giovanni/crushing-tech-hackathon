@@ -27,6 +27,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
 .navigation {
   background-color: #1c181d;
   display: flex;
@@ -111,8 +125,12 @@ main {
 }
 
 .main__container {
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-left: 20rem;
+  padding-right: 20rem;
+}
+
+.alert__container {
+  position: relative;
 }
 
 .alert {
@@ -122,6 +140,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  width: 100%;
 }
 
 .alert__content {
@@ -155,8 +178,300 @@ main {
 .alert__close svg {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
+.main__content {
+  margin-top: 2rem;
+  background-color: var(--bg-white);
+  border-radius: 18px;
+  border: 1px solid #dbdbdb;
+  padding: 18px;
+}
+
+.main__content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.main__content-heading {
+  font-style: normal;
+  color: var(--font-color-dark);
+}
+
+.main__content-heading h2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.main__content-heading h4 {
+  padding-top: 0.4rem;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.main__content-close {
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.main__content-close:hover {
+  background-color: var(--hover-state);
+}
+
+.main__content-close svg {
+  color: #4a4a4a;
+  width: 20px;
+  height: 20px;
+}
+
+.progress {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.progress__counter {
+  display: flex;
+  gap: 4px;
+}
+
+.progress__counter span {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: var(--font-color-dark);
+}
+
+.progress__bar {
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #e3e3e3;
+  width: 72px;
+  height: 4px;
+}
+
+.progress__bar--progress {
+  width: 10%;
+  background-color: #1a1a1a;
+  height: 4px;
+}
+
+.progress__bar--progress-1 {
+  width: 20%;
+}
+
+.progress__bar--progress-2 {
+  width: 40%;
+}
+
+.progress__bar--progress-3 {
+  width: 60%;
+}
+
+.progress__bar--progress-4 {
+  width: 80%;
+}
+
+.progress__bar--progress-5 {
+  width: 100%;
+}
+
+.process {
+  margin-top: 1.2rem;
+}
+
+.process__single {
+  background-color: var(--bg-white);
+  padding: 8px 8px 12px 8px;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.process__single.active {
+  background-color: var(--bg-primary);
+  cursor: auto;
+}
+
+.process__single.active .process__single-content--main span {
+  display: block;
+}
+
+.process__single .process__single-content--main span {
+  display: none;
+}
+
+.process__single.active .process__single-content--image {
+  display: block;
+}
+
+.process__single .process__single-content--image {
+  display: none;
+}
+
+.process__single-icon {
+}
+
+.process__single-icon label {
+  position: relative;
+  width: 100%;
+  max-width: 24px;
+  height: 24px;
+  cursor: pointer;
+  flex-grow: 1;
+}
+.process__single-icon label:focus {
+  outline: none;
+  border: none;
+}
+.process__single-icon input {
+  display: block;
+  position: fixed;
+  right: -10000000000vw;
+}
+.process__single-icon input + span > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 0%);
+}
+.process__single-icon input + span > svg {
+  opacity: 0;
+}
+.process__single-icon input + span > svg:nth-of-type(1) {
+  animation-name: checkSvgAnimation;
+  animation-duration: 70ms;
+  animation-timing-function: linear;
+  opacity: 1;
+}
+.process__single-icon input + span:hover > svg:nth-of-type(2) {
+  opacity: 1;
+}
+.process__single-icon input:focus > span > svg:nth-of-type(5) {
+  opacity: 1;
+}
+.process__single-icon input:checked + span > svg {
+  animation-name: checkSvgAnimation;
+  animation-duration: 100ms;
+  animation-fill-mode: both;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(1) {
+  opacity: 0;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(2) {
+  animation-delay: 50ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(3) {
+  animation-delay: 150ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(4) {
+  animation-delay: 230ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(5) {
+  animation-delay: 300ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(6) {
+  animation-delay: 380ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(7) {
+  animation-delay: 450ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(8) {
+  animation-delay: 520ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(9) {
+  animation-delay: 600ms;
+}
+.process__single-icon input:checked + span > svg:nth-of-type(10) {
+  animation-delay: 700ms;
+  opacity: 1;
+}
+@keyframes checkSvgAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.process__single-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.process__single-content--main {
+  margin-left: 35px;
+}
+
+.process__single-content--main h2 {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.process__single-content--main p {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--font-color-mid);
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.process__single-content--main a {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  display: inline;
+}
+
+.process__single-content-button--group {
+  display: flex;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+.process__single-content--button {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3;
+  background-color: #404040;
+  padding: 6px 12px;
+  color: var(--bg-white);
+  border: 1.5px solid var(--stroke-50);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.process__single-content--button-alt {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.3;
+  background-color: var(--white);
+  padding: 6px 12px;
+  color: #323232;
+  cursor: pointer;
+  border: none;
+}
 /*#######################################*/
 /*############# RESPONSIVENESS #############*/
 /*#######################################*/
@@ -190,6 +505,15 @@ main {
 
   .navigation__profile-name--text {
     display: block;
+  }
+
+  .main__container {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+
+  .process__single-content--main {
+    width: 60%;
   }
 }
 
