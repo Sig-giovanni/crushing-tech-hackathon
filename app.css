@@ -417,20 +417,26 @@ main {
   margin: 0;
 }
 
-.main__content-close {
+.main__content-toggle {
   padding: 4px;
   border-radius: 6px;
   cursor: pointer;
+  background-color: transparent;
 }
 
-.main__content-close:hover {
+.main__content-toggle:hover {
   background-color: var(--hover-state);
 }
 
-.main__content-close svg {
+.main__content-toggle svg {
   color: #4a4a4a;
   width: 20px;
   height: 20px;
+  transition: transform 0.5s ease;
+}
+
+.main__content-toggle svg.close {
+  transform: rotate(180deg);
 }
 
 .progress {
@@ -607,6 +613,16 @@ main {
   100% {
     opacity: 1;
   }
+}
+
+.process {
+  height: 0;
+  transition: height 0.5s ease;
+  overflow: hidden;
+}
+
+.process.active {
+  height: 400px;
 }
 
 .process__single-content {

@@ -10,6 +10,8 @@ const navigationProfile = document.querySelector(
 const navigationProfileName = document.querySelector(
   ".navigation__profile-name"
 );
+const process = document.querySelector(".process");
+const closeMainContent = document.querySelector(".main__content-toggle");
 
 const body = document.querySelector("body");
 
@@ -34,6 +36,12 @@ navigationProfileName.addEventListener("click", (e) => {
   } else {
     navigationProfile.classList.add("active");
   }
+});
+
+closeMainContent.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.target.classList.toggle("close");
+  process.classList.toggle("active");
 });
 
 body.addEventListener("click", (e) => {
