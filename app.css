@@ -47,6 +47,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+}
+
 .navigation {
   background-color: #1c181d;
   display: flex;
@@ -120,6 +124,7 @@ a {
   padding: 8px;
   gap: 8px;
   align-items: center;
+  cursor: pointer;
 }
 
 .navigation__profile-name:hover {
@@ -153,7 +158,15 @@ a {
   border-radius: 14px;
   border: 1px solid #dbdbdb;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
-  /* display: none; */
+  display: none;
+}
+
+.navigation__profile-notification.active {
+  display: block;
+}
+
+.navigation_profile-notification.active {
+  display: block;
 }
 
 .navigation__profile-notification-profile {
@@ -273,6 +286,10 @@ a {
   display: none;
 }
 
+.navigation__profile-notification-alert.active {
+  display: block;
+}
+
 .navigation__profile_notification_alert-heading {
   display: flex;
   align-items: center;
@@ -357,8 +374,9 @@ main {
   cursor: pointer;
 }
 
-/* .alert__close {
-} */
+.alert__close {
+  background-color: transparent;
+}
 
 .alert__close svg {
   width: 20px;
